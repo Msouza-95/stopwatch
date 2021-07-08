@@ -1,37 +1,39 @@
 
 window.addEventListener("load", () =>{
-let sec = 420; 
+    const botao = document.getElementById("botao");
 
-const countDiv = document.getElementById('timer')
-
-
+    botao.addEventListener("click", () => {
 
 
-const secpass = () =>{
+            let sec = 360; 
 
-    let min = Math.floor(sec/60);
-    let lackSec= sec % 60;
+            const countDiv = document.getElementById('timer')
 
-    if(lackSec < 10 ){
-        lackSec = 0 + lackSec;
-    }
+            const secpass = () =>{
 
-    if(min < 10 ){
-        min = 0 + min;
-    }
+                let min = Math.floor(sec/60);
+                let lackSec= sec % 60;
 
-    countDiv.innerHTML = min + ":" + lackSec;
+                if(lackSec < 10 ){
+                    lackSec = 0 + lackSec;
+                }
 
-    if(sec > 0){
-        sec = sec -1;
-    }else{
+                if(min < 10 ){
+                    min = 0 + min;
+                }
 
-        countDiv.innerHTML = "Acabou!"
-    }
+                countDiv.innerHTML = min + ":" + lackSec;
 
-}
+                if(sec > 0){
+                    sec = sec -1;
+                }else{
 
-const countDown = setInterval(()=> secpass(), 1000);
+                    countDiv.innerHTML = "Acabou!"
+                }
 
+            }
 
+            const countDown = setInterval(()=> secpass(), 1000);
+
+    });
 });
